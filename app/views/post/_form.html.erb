@@ -1,0 +1,42 @@
+<div class="gallery-h2">
+  <h2>Upload an image</h2>
+</div>
+
+<%= form_for @post, url: {action: "create"} do |f| %>
+
+  <% if @post.errors.any? %>
+    <div class="alert alert-danger">
+      <h2 class="h2-message"><%= pluralize(@post.errors.count, "error") %></h2>
+      <ul>
+        <% @post.errors.full_messages.each do |post| %>
+          <div class="list-group">
+            <%= post %>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="gallery-form">
+    <div class="gallery-form-group">
+      <div class="upload-title">
+        <%= f.label :title, "Title", class: "col-sm-1 control-label" %>
+      </div>
+        <div class="col-sm-10">
+          <%= f.text_field :title, class: "form-control upload-title" %>
+        </div>
+    </div>
+
+    <div class="gallery-form-group">
+      <%= f.label :description, "Description", class: "col-sm-1 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: "form-control", rows:"5", cols: "1" %>
+      </div>
+    </div>
+
+    <%= f.file_field :image, class: "btn btn-outline-secondary" %>
+  </div>
+
+  <%= link_to 'Back', post_index_path(@post), class:'btn btn-outline-primary' %>&nbsp
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

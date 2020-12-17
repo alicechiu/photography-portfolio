@@ -1,0 +1,54 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.register-title, .sign-in-form, .password-title {
+  padding-top: 130px;
+  text-align: center;
+  color: royalblue;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.register-form, .password-form {
+  padding-bottom: 120px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.register-form-group {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-left: 170px;
+}
+
+.no-space-break {
+  white-space: nowrap;
+}
+
+.remember-me {
+  padding-bottom: 5px;
+  display: inline-block;
+  width: 50%;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.remember-me-input {
+  margin: 3px;
+  float: left;
+}
+
+.password-devise-container {
+  max-width: 500px;
+  margin-bottom: 140px;
+  margin: 50px auto 30px;
+  padding-bottom: 170px;
+  box-sizing: border-box;
+  text-align: center;
+  .wrap {
+    text-align: left;
+  }
+}
+
+.forgot-password-form, .confirmation-form {
+  padding-top: 150px;
+}

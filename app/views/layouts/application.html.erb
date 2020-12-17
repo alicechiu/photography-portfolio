@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "Home", home_index_path %>
+      <%= link_to "Portfolio", portfolio_index_path %>
+      <%= link_to "Gallery Uploads", post_index_path %>
+      <%= link_to "Photography Spots", photo_locations_path %>
+      <%= link_to "Contact", new_message_path %>
+      <div class="dropdown show float-right">
+        <% if user_signed_in? %>
+          <div class="logged-in-font">
+            <%= current_user.email %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </div>
+        <% else %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+
+
+    <div class="align-footer">
+      <footer>
+        <div class="bg-gray-light">
+          <div class="copyright">&copy;2020 Alice Chiu</div>
+            <div class="wrap">
+              <div class="social-links">
+                <a href="https://github.com/WhistleLabs/portfolio-website"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </div>
+            </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

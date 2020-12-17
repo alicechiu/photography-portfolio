@@ -1,0 +1,29 @@
+<div class="gallery-title">
+  <h2>Images index</h2>
+</div>
+
+<div class="container">
+  <div class="upload-btn">
+    <%= link_to "Create Upload", new_post_path(@post), class: "btn btn-primary" %>
+  </div>
+    <table class="table table-hover table-responsive">
+      <thead class="thead-light">
+        <tr>
+          <th class="gallery-header">Title</th>
+          <th class="gallery-header">Description</th>
+          <th class="gallery-header no-space-break">Created at</th>
+          <th class="gallery-header">Image url</th>
+        </tr>
+      </thead>
+      <body>
+        <% @posts.each do |post| %>
+          <tr>
+            <td class="gallery-data no-space-break"><%= post.title %></td>
+            <td class="gallery-data no-space-break"><%= post.description %></td>
+            <td class="gallery-data no-space-break"><%= post.created_at %></td>
+            <td class="gallery-data"><%= url_for(post.image) if post.image.attached? %></td>
+          </tr>
+        <% end %>
+      </body>
+    </table>
+</div>
