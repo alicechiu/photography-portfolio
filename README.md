@@ -1,11 +1,13 @@
 # README
 
-Portfolio site is a Rails app that features Active Storage which gives the ability to upload images
+Photography portfolio site is a Rails app that features Active Storage which gives the ability to upload images
 that gets saved to Amazon S3. Google maps Javascript API is used to display markers of various locations
 where photo enthusiasts can go to for the next photography adventure. 
 
+The app is authenticated using Devise gem so users must create a sign-in account before viewing the website.
+
 * Ruby version
-    * `2.5.1`
+    * `2.7.2`
 
 * Rails version
     * `5.2`
@@ -18,8 +20,9 @@ where photo enthusiasts can go to for the next photography adventure.
     * For local user registration and password reset emails, verify in console
     
 * System dependencies
-    * Heroku account 
-    * Google Maps Platform
+    * Heroku account
+    * Heroku CLI
+    * Google Maps Platform account with API keys generated for local, development, and production environments 
     * AWS account 
 
 * Configuration
